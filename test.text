@@ -1,0 +1,45 @@
+function hideButtons() {var dropdownElem = document.querySelector('select[name="options[Size]"]');
+var selectedValue = dropdownElem.value;
+var a2cButton = document.querySelector(".product-form__submit");
+var checkoutButton = document.querySelector(".shopify-payment-button__button");
+if (selectedValue == "Unselected") {
+
+    a2cButton.disabled = true;
+    checkoutButton.disabled = true;
+   
+            } else {
+
+    a2cButton.disabled = false;
+    checkoutButton.disabled = false;
+                
+            }
+}
+
+// change event checking code
+var myselectElements = document.querySelectorAll(".select__select");
+
+    myselectElements.forEach(function(element) {
+        element.addEventListener("change", function() {
+            
+               setTimeout(function() {
+    hideButtons();
+}, 200);
+setTimeout(function() {
+    hideButtons();
+}, 500);
+setTimeout(function() {
+    hideButtons();
+}, 1000);
+        });
+    });
+
+    
+    
+    // page refresh current element checking code
+    
+
+hideButtons();
+
+
+
+// https://community.shopify.com/c/shopify-design/add-product-variant-images-to-swatch/td-p/817405
